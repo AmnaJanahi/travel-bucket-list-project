@@ -19,5 +19,9 @@
    <p>Transportation: <%= foundTrip.transportation %></p>
    <p>Accommodation: <%= foundTrip.accommodation %></p>
 
+    <form action="trip/delete/<%=foundTrip._id%>?_method=Delete" method="post">
+         <button type="submit">Delete Trip</button>
+    </form>
+    
 </body>
 </html>
