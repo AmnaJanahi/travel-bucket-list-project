@@ -5,11 +5,12 @@ const countrySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    description: {
+    notes: {
         type: String
     },
-    travelDate: {
-        type: Date
+    season: {
+        type: String,
+        enum: ["Spring", "Summer", "Autumn", "Winter"]
     }
 })
 const Country= mongoose.model("Country",countrySchema)

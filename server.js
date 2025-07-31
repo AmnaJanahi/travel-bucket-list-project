@@ -10,6 +10,7 @@ const session = require("express-session")
 const passUserToView = require('./middleware/passUserToView')
 const isSignedIn = require("./middleware/isSignedIn")
 const countryRoutes = require("./routes/country.routes")
+const tripRoutes = require("./routes/trip.routes.js")
 
 
 
@@ -48,6 +49,7 @@ conntectToDB()
 
 app.use("/auth",authRoutes)
 app.use("/country", countryRoutes)
+app.use("/trip", tripRoutes)
 app.use(isSignedIn) //all your protected routes go below this middleware
 // Routes go here
 

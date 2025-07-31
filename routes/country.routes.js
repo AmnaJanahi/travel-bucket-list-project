@@ -18,8 +18,15 @@ router.post("/",async (req,res) => {
     }
 })
 
-
-
+router.get("/",async (req,res) => {
+    try{
+        const allCountries = await Country.find()
+        res.render("country/all-countries.ejs", {allCountries}) 
+    }
+    catch(error){
+        console.log("There is an error",error)
+    }
+})
 
 
 
