@@ -11,14 +11,17 @@
     <% const selectedAccommodation = foundTrip.accommodation%>
     <form action="/trip/<%= foundTrip._id%>/update?_method=PUT" method="post">
 
-        label for="tripName">Trip Name:</label>
+        <label for="tripName">Trip Name:</label>
         <input value="<%=foundTrip.tripName%>" type="text" name="tripName" id="tripName">
 
         <label for="country">Countries:</label>
         <select multiple name="country" id="country" required>
-        <% allCountries.forEach((oneCountry) => { %>
-            <option value="<%= oneCountry._id %>"><%= oneCountry.name %></option>
-        <% })%>
+            <% allCountries.forEach((oneCountry) => { %>
+            <option value="<%= oneCountry._id %>" 
+                <% if (foundTrip.country[0].name === oneCountry.name) { %> selected <% } %>>
+                <%= oneCountry.name %>
+            </option>
+        <% }) %>
         </select>
 
         <label for="transportation">Transportation:</label>

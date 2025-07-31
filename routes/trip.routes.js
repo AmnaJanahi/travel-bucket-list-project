@@ -39,10 +39,10 @@ router.get("/:tripId", async (req,res)=> {
     }      
 })
 
-router.delete( "/delete/:id",async (req,res) => {
+router.delete("/delete/:id",async (req,res) => {
  try{
     const deletedTrip = await Trip.findByIdAndDelete(req.params.id)
-    res.render("trip/trip-details.ejs", {deletedTrip})
+    res.redirect("/trip")
     }
     catch(error){
         console.log("There is an error",error)
@@ -51,8 +51,9 @@ router.delete( "/delete/:id",async (req,res) => {
 
 router.get("/update/:id", async (req,res) => {
     try{
-        const foundTrip= await Trip.findById(req.params.id)
+        const foundTrip= await Trip.findById(req.params.id).populate("country")
         const allCountries = await Country.find()
+        
         res.render("trip/update-trip.ejs", {foundTrip, allCountries})  
     }
     catch(error){

@@ -22,12 +22,13 @@
    <form action="/trip/update/<%= foundTrip._id%>?_method=Update">
         <button type="submit">Update Trip</button>
     </form>
-    
+
     <br>
 
-    <form action="trip/delete/<%=foundTrip._id%>?_method=Delete" method="post">
+    <form action="/trip/delete/<%=foundTrip._id%>?_method=Delete" method="POST">
          <button type="submit">Delete Trip</button>
     </form>
+
 
 </body>
 </html>
