@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Country Details:</h1>
+
+    <h2>Country: <%= foundCountry.name %></h2>
+    <p>Notes: <%= foundCountry.notes %></p>
+    <p>Travel Season: <%= foundCountry.season %></p>
+
+    <form action="/country/update/<%= foundCountry._id%>?_method=Update">
+        <button type="submit">Update Country</button>
+    </form>
+    <br>
+    <form action="/country/delete/<%=foundCountry._id%>?_method=Delete" method="post">
+        <button type="submit">Delete Country</button>
+    </form>
+
+
+    
+</body>
+</html>
