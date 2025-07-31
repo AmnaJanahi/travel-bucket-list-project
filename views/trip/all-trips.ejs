@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>All Trips:</h1>
+    <% allTrips.forEach((oneTrip)=>{ %>
+    <h2>Trip Name: <%= oneTrip.tripName %></h2>
+    <p>Countries:  
+        <ul>
+            <% oneTrip.country.forEach((oneCountry)=>{ %>
+                    <li><%= oneCountry.name %></li>
+            <% }) %>
+        </ul>
+    </p>
+    <p>Transportation: <%= oneTrip.transportation %></p>
+    <p>Accommodation: <%= oneTrip.accommodation %></p>
+
+    <a href="/trip/<%=oneTrip._id%>">Trip details</a>
+
+    <% })%>
+  </body>
+</html>
