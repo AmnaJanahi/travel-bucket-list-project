@@ -28,6 +28,16 @@ router.get("/", async (req,res) => {
      }
     })
 
+router.get("/:tripId", async (req,res)=> {
+    try{
+        const foundTrip = await Trip.findById(req.params.tripId).populate("country")
+        console.log(foundTrip)
+        res.render("trip/trip-details.ejs", {foundTrip})
+    }
+    catch(error){
+         console.log("There is an error",error)   
+    }      
+})
 
 
 module.exports = router
