@@ -39,5 +39,16 @@ router.get("/:countryId", async (req,res) => {
     }
 })
 
+router.delete( "/delete/:id",async (req,res) => {
+ try{
+     const countryDeteted = await Country.findByIdAndDelete(req.params.id)
+     res.redirect("/country")
+       
+    }
+    catch(error){
+        console.log("There is an error",error)
+    }
+})
+
 
 module.exports = router
