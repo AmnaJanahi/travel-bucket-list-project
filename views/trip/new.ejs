@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add your trip:</h1>
+    <form action="/trip" method="post">
+
+        <label for="tripName">Trip Name:</label>
+        <input type="text" id="tripName" name="tripName">
+
+        <label for="country">Countries:</label>
+        <select multiple name="country" id="country" required>
+        <% allCountries.forEach((oneCountry) => { %>
+            <option value="<%= oneCountry._id %>"><%= oneCountry.name %></option>
+        <% })%>
+        </select>
+        
+        
+        <label for="transportation">Transportation:</label>
+        <select name="transportation" required>
+            <option value="">--Select a transport option--</option>
+            <option value="car">Car</option>
+            <option value="plane">Plane</option>
+            <option value="train">Train</option>
+            <option value="bus">Bus</option>
+            <option value="other">Other</option>
+        </select>
+        
+        <label for="accommodation">Accommodation:</label>
+        <select name="accommodation" required>
+            <option value="">--Select accommodation--</option>
+            <option value="hotel">Hotel</option>
+            <option value="hostel">Hostel</option>
+            <option value="camping">Camping</option>
+            <option value="other">Other</option>
+        </select>
+        
+        <button type="submit">Add your trip</button>
+
+    </form>
+</body>
+</html>
