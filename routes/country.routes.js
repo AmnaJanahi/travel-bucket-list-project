@@ -29,6 +29,15 @@ router.get("/",async (req,res) => {
 })
 
 
+router.get("/:countryId", async (req,res) => {
+     try{
+         const foundCountry = await Country.findById(req.params.countryId)
+         res.render("country/country-details.ejs",{foundCountry}) 
+    }
+    catch(error){
+        console.log("There is an error",error)
+    }
+})
 
 
 module.exports = router
