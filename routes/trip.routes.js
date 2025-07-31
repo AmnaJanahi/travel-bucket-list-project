@@ -60,4 +60,13 @@ router.get("/update/:id", async (req,res) => {
     }
 })
 
+router.put("/:tripId/update", async (req,res) =>{
+   try{
+    const updatedTrip = await Trip.findByIdAndUpdate(req.params.tripId,req.body)
+      res.redirect("/trip") 
+    }
+    catch(error){
+        console.log("There is an error",error)
+    }
+})
 module.exports = router
