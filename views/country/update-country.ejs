@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Country Update</h1>
+    <% const selected = foundCountry.season%>
+    <form action="/country/<%= foundCountry._id%>/update?_method=PUT" method="post">
+
+        <label for="name">Country:</label>
+        <input value="<%=foundCountry.name%>" type="text" name="name" id="name">
+
+        <label for="notes">Add your notes:</label>
+        <textarea value="<%=foundCountry.notes%>" name="notes" id="notes"><%=foundCountry.notes%></textarea>
+
+        <label for="season">Travel Season</label>
+        <select name="season" required value >
+            <option value="select">--Select a season--</option>
+            <option value="spring"<%= selected === "Spring" && "selected" %>>Spring</option>
+            <option value="summer"<%= selected === "Summer" && "selected" %>>Summer</option>
+            <option value="autumn"<%= selected === "Autumn" && "selected" %>>Autumn</option>
+            <option value="Winter"<%= selected === "Winter" && "selected" %>>Winter</option>
+        </select>
+        <br>
+
+        <button type="submit">Update Country</button>
+
+    </form>
+</body>
+</html>
