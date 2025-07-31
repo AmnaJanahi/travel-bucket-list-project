@@ -39,5 +39,14 @@ router.get("/:tripId", async (req,res)=> {
     }      
 })
 
+router.delete( "/delete/:id",async (req,res) => {
+ try{
+    const deletedTrip = await Trip.findByIdAndDelete(req.params.id)
+    res.render("trip/trip-details.ejs", {deletedTrip})
+    }
+    catch(error){
+        console.log("There is an error",error)
+    }
+})
 
 module.exports = router
