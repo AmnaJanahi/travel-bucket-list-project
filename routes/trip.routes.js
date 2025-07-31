@@ -49,4 +49,15 @@ router.delete( "/delete/:id",async (req,res) => {
     }
 })
 
+router.get("/update/:id", async (req,res) => {
+    try{
+        const foundTrip= await Trip.findById(req.params.id)
+        const allCountries = await Country.find()
+        res.render("trip/update-trip.ejs", {foundTrip, allCountries})  
+    }
+    catch(error){
+        console.log("There is an error",error)
+    }
+})
+
 module.exports = router
