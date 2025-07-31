@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Trip Details:</h1>
+
+    <h2>Trip: <%= foundTrip.tripName %></h2>
+    <p>Countries: 
+        <ul>
+            <% foundTrip.country.forEach((oneCountry)=>{ %>
+                    <li><%= oneCountry.name %></li>
+            <% }) %>
+        </ul>
+    </p>
+   <p>Transportation: <%= foundTrip.transportation %></p>
+   <p>Accommodation: <%= foundTrip.accommodation %></p>
+
+
+</body>
+</html>
