@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>All Countries:</h1>
+    <% allCountries.forEach((oneCountry)=>{ %>
+    <h2>Country: <%= oneCountry.name %></h2>
+    <p>Notes: <%= oneCountry.notes %></p>
+    <p>Travel Season: <%= oneCountry.season %></p>
+
+    <a href="/country/<%=oneCountry._id%>">Country details</a>
+
+    <% })%>
+  </body>
+</html>
