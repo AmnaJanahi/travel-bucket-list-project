@@ -7,7 +7,16 @@ router.get("/new",async (req,res) => {
     res.render("trip/new.ejs", {allCountries})
 })
 
-
+router.post("/", async (req,res) => {
+    try{
+        const createdTrip = await Trip.create(req.body)
+        console.log(req.body)
+        res.redirect("/trip/new")
+    }
+    catch(error){
+        console.log("There is an error",error)   
+     }
+})
 
 
 
