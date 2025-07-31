@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add your travel bucket list:</h1>
+    <form action="/country", method="post">
+
+        <label for="name">Country:</label>
+        <input type="text" name="name" id="name">
+
+        <label for="notes">Add your notes:</label>
+        <textarea name="notes" id="notes"></textarea>
+
+        <label for="season">Travel Season</label>
+        <select name="season" required>
+            <option value="select">--Select a season--</option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Autumn">Autumn</option>
+            <option value="Winter">Winter</option>
+        </select>
+        <br>
+
+        <button type="submit">Add your country</button>
+    </form>
+</body>
+</html>
