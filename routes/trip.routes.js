@@ -18,6 +18,16 @@ router.post("/", async (req,res) => {
      }
 })
 
+router.get("/", async (req,res) => {
+       try{
+        const allTrips = await Trip.find().populate("country")
+        res.render("trip/all-trips.ejs", {allTrips, user:req.session.user})
+    }
+    catch(error){
+        console.log("There is an error",error)   
+     }
+    })
+
 
 
 module.exports = router
