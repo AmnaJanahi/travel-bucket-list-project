@@ -50,5 +50,15 @@ router.delete( "/delete/:id",async (req,res) => {
     }
 })
 
+router.get("/update/:id", async (req,res) => {
+    try{
+        const foundCountry= await Country.findById(req.params.id)
+        res.render("country/update-country.ejs", {foundCountry})  
+    }
+    catch(error){
+        console.log("There is an error",error)
+    }
+})
+
 
 module.exports = router
