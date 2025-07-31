@@ -60,5 +60,14 @@ router.get("/update/:id", async (req,res) => {
     }
 })
 
+router.put("/:countryId/update", async (req,res) =>{
+   try{
+    const updatedCountry = await Country.findByIdAndUpdate(req.params.countryId,req.body)
+      res.redirect("/country") 
+    }
+    catch(error){
+        console.log("There is an error",error)
+    }
+})
 
 module.exports = router
