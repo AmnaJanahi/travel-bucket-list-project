@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css"   href="/css/new-trip.css">
     <title>Document</title>
 </head>
-<body>
+<body class="add-trip-page" >
+      <%- include('../partials/navbar') %>
     <h1>Add your trip:</h1>
+    <p class="page-subtitle">
+        Start planning by naming the trip, selecting countries, choosing how you’ll travel, and where you’ll stay. </p>
     <form action="/trip" method="post">
 
         <label for="tripName">Trip Name:</label>

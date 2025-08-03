@@ -1,0 +1,158 @@
+body.add-countries-page {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #1f2429;
+  position: relative;
+  color: #e3e8ff;
+  overflow-x: hidden;
+}
+
+
+body.add-countries-page::before,
+body.add-countries-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  opacity: 0.15;
+  filter: blur(120px);
+  z-index: 0;
+}
+body.add-countries-page::before {
+  width: 520px;
+  height: 520px;
+  background: rgba(255, 204, 172, 0.18);
+  top: -100px;
+  left: -80px;
+}
+body.add-countries-page::after {
+  width: 480px;
+  height: 480px;
+  background: rgba(245, 230, 210, 0.10);
+  bottom: -100px;
+  right: -60px;
+}
+
+
+.countries-hero {
+  width: 100%; 
+  background: url("/images/11627801029428106484.jpg") center/cover no-repeat ;
+  padding-top: 700rem;
+  padding: 10rem 1rem 3rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.countries-hero,
+.countries-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.countries-content {
+  width: 100%;
+  margin: -40px auto 0;
+}
+
+.countries-hero h1,
+.countries-hero .subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+.countries-hero h1 {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f0f2fa;
+}
+.countries-hero {
+  padding-top: 10rem; 
+}
+.countries-hero .subtitle {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.9);
+}
+
+
+
+.countries-content {
+  background: #f7f8fc;
+  border-radius: 18px 18px 0 0;
+  padding: 2rem 1rem 4rem;
+  margin: -40px auto 0;
+  box-shadow: 0 -12px 60px -10px rgba(31,45,58,0.08);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.countries-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.countries-grid > * {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem 1rem 1.25rem;
+  box-shadow: 0 24px 60px -10px rgba(31,45,58,0.08);
+  color: #1f2d3a;
+  position: relative;
+}
+
+
+.countries-grid h2 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+
+.countries-grid p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+
+.countries-grid ul {
+  margin: 4px 0 0 1rem;
+  padding-left: 16px;
+  list-style: disc;
+  color: #4f5d7a;
+}
+
+
+.details-link {
+  display: inline-block;
+  margin-top: 8px;
+  text-decoration: none;
+  background: linear-gradient(135deg,#350b04c2,#440d05);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: filter .2s;
+}
+.details-link:hover {
+  filter: brightness(1.08);
+}
+

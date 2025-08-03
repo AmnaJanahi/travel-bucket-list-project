@@ -3,24 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="/css/country-details.css" />
     <title>Document</title>
+    
 </head>
 <body>
-    <h1>Country Details:</h1>
+      <%- include('../partials/navbar') %>
+     <div class="container">
+    <h1>Country Details</h1>
+    <p class="subtitle">Review the saved country info and choose whether to update or remove it.</p>
 
-    <h2>Country: <%= foundCountry.name %></h2>
-    <p>Notes: <%= foundCountry.notes %></p>
-    <p>Travel Season: <%= foundCountry.season %></p>
+    <div class="card">
+      <div class="field">
+        <span class="label">Country:</span>
+        <div class="value"><%= foundCountry.name %></div>
+      </div>
 
-    <form action="/country/update/<%= foundCountry._id%>?_method=Update">
-        <button type="submit">Update Country</button>
+      <div class="field">
+        <span class="label">Notes:</span>
+        <div class="value"><%= foundCountry.notes %></div>
+      </div>
+
+      <div class="field">
+        <span class="label">Travel Season:</span>
+        <div class="value"><%= foundCountry.season %></div>
+      </div>
+
+      <div class="actions">
+        <form action="/country/update/<%= foundCountry._id%>?_method=Update">
+        <button type="submit" class="btn btn-edit">Update Country</button>
     </form>
     <br>
     <form action="/country/delete/<%=foundCountry._id%>?_method=Delete" method="post">
-        <button type="submit">Delete Country</button>
+        <button type="submit" class="btn btn-delete">Delete Country</button>
     </form>
-
-
+      </div>
+    </div>
+  </div>
     
 </body>
 </html>

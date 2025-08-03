@@ -5,12 +5,14 @@ const dotenv = require("dotenv").config() //this allows me to use my .env values
 const morgan = require("morgan")
 const methodOverride = require("method-override")
 const conntectToDB = require('./config/db')
+const indexRoutes = require("./routes/index.routes.js")
 const authRoutes = require("./routes/auth.routes")
 const session = require("express-session")
 const passUserToView = require('./middleware/passUserToView')
 const isSignedIn = require("./middleware/isSignedIn")
 const countryRoutes = require("./routes/country.routes")
 const tripRoutes = require("./routes/trip.routes.js")
+
 
 
 
@@ -46,13 +48,13 @@ conntectToDB()
 
 
 
-
+app.use("/", indexRoutes)
 app.use("/auth",authRoutes)
-app.use("/country", countryRoutes)
-app.use("/trip", tripRoutes)
+
 app.use(isSignedIn) //all your protected routes go below this middleware
 // Routes go here
-
+app.use("/country", countryRoutes)
+app.use("/trip", tripRoutes)
 
 
 

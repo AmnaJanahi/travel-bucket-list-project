@@ -1,0 +1,122 @@
+body {
+  background: url("/images/pexels-camerashy-2114206.jpg")center/cover fixed no-repeat; 
+}
+.site-nav {
+  background: #140e0e95;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 8px 28px -4px rgba(0, 2, 3, 0.315);
+  position: fixed;
+  margin-top: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  font-size: 0.9rem;
+}
+.nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  
+}
+.brand .logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: #e8e8f0;
+  font-size: 1.25rem;
+  align-items: end;
+}
+.links {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  flex-wrap: wrap;
+}
+.links a {
+  text-decoration: none;
+  color: #e8e8f0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background .2s;
+}
+.links a:hover {
+  background: rgba(99,102,241,0.08);
+}
+.account {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.account .username {
+  font-weight: 500;
+  color: #e8e8f0;
+}
+.account .btn, .btn-logout {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #e8e8f0;
+  background: #e8e8f0;
+  color: #161515;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.account .btn:hover, .btn-logout:hover {
+  filter: brightness(1.1);
+}
+.btn-primary {
+  background: linear-gradient(135deg,#e8e8f0,rgb(215, 213, 234));
+  color: #2c2b2b;
+  padding: 0.85rem 1.3rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+.btn-secondary {
+  background: #e8e8f0;
+  color:  #2c2b2b;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+
+.home-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1080px;
+  margin: 17rem auto;
+  flex-wrap: wrap;
+}
+.hero-content {
+  flex: 1 1 320px;
+  color: #e8e8f0;
+  font-size: large;
+}
+.hero-content h1 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin: 0 0 1rem;
+  color:#e8e8f0;
+
+}
+.cta-group {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+
+
+
+
+
+
+

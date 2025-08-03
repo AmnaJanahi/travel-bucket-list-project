@@ -3,24 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/all-trips.css" />
+    <title>All Trips</title>
   </head>
-  <body>
-    <h1>All Trips:</h1>
-    <% allTrips.forEach((oneTrip)=>{ %>
-    <h2>Trip Name: <%= oneTrip.tripName %></h2>
-    <p>Countries:  
-        <ul>
-            <% oneTrip.country.forEach((oneCountry)=>{ %>
-                    <li><%= oneCountry.name %></li>
-            <% }) %>
-        </ul>
-    </p>
-    <p>Transportation: <%= oneTrip.transportation %></p>
-    <p>Accommodation: <%= oneTrip.accommodation %></p>
 
-    <a href="/trip/<%=oneTrip._id%>">Trip details</a>
+  <body class="add-trip-page">
+    <%- include('../partials/navbar') %>
 
-    <% })%>
+    <section class="trips-hero">
+      <h1>All Trips</h1>
+      <p class="subtitle">Review your planned adventures, edit details, or start something new.</p>
+    </section>
+
+    <section class="trips-content">
+      <div class="trips-grid">
+        <% allTrips.forEach((oneTrip) => { %>
+          <div class="trip-card">
+            <h2>Trip Name: <%= oneTrip.tripName %></h2>
+            <p>Countries:</p>
+            <ul>
+              <% oneTrip.country.forEach((oneCountry) => { %>
+                <li><%= oneCountry.name %></li>
+              <% }) %>
+            </ul>
+            <p>Transportation: <%= oneTrip.transportation %></p>
+            <p>Accommodation: <%= oneTrip.accommodation %></p>
+            <a href="/trip/<%= oneTrip._id %>" class="details-link">Trip details</a>
+          </div>
+        <% }) %>
+      </div>
+    </section>
   </body>
 </html>

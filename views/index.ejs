@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Bucket List</title>
+<link rel="stylesheet" type="text/css"   href="../css/add-country.css">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <main class="home-hero">
+    <div class="hero-content">
+      <h1>Welcome to Your Travel Bucket List</h1>
+      <% if (user) { %>
+        <p>Hi <strong><%= user.username %></strong>, continue planning your next adventure.</p>
+        <div class="cta-group">
+          <a href="/country/new" class="btn-primary">Add Country</a>
+          <a href="/trip/new" class="btn-secondary">Plan Trip</a>
+        </div>
+      <% } else { %>
+        <p>Log in to start saving countries and planning trips.</p>
+        <div class="cta-group">
+          <a href="/auth/login" class="btn-primary">Login</a>
+          <a href="/auth/sign-up" class="btn-secondary">Sign Up</a>
+        </div>
+      <% } %>
+    </div>
+  </main>
+</body>
+</html>

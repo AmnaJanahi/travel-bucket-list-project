@@ -8,6 +8,7 @@ const tripSchema = new mongoose.Schema ({
     country:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Country'
+        
     }],
     transportation:{
         type: String,

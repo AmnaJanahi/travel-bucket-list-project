@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css"   href="/css/new-country.css">
+ 
+
     <title>Document</title>
 </head>
-<body>
+<body class="add-country-page">
+      <%- include('../partials/navbar') %>
     <h1>Add your travel bucket list:</h1>
-    <form action="/country", method="post">
+    <p class="page-subtitle">Add a country you'd love to visit. Fill in your notes and pick the season to start planning.</p>
+    <form action="/country" method="post">
 
         <label for="name">Country:</label>
         <input type="text" name="name" id="name">

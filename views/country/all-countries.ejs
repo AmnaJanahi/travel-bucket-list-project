@@ -3,17 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" type="text/css" href="/css/all-countries.css" />
     <title>Document</title>
   </head>
-  <body>
-    <h1>All Countries:</h1>
-    <% allCountries.forEach((oneCountry)=>{ %>
-    <h2>Country: <%= oneCountry.name %></h2>
-    <p>Notes: <%= oneCountry.notes %></p>
-    <p>Travel Season: <%= oneCountry.season %></p>
+  <body class="add-countries-page">
 
-    <a href="/country/<%=oneCountry._id%>">Country details</a>
+     <%- include('../partials/navbar') %>
 
-    <% })%>
+    <section class="countries-hero">
+      <h1>All Countries</h1>
+      <p class="subtitle">Browse the countries on your bucket list, add notes, or plan a trip.</p>
+    </section>
+    <section class="countries-content">
+      <div class="countries-grid">
+        <% allCountries.forEach((oneCountry)=>{ %>
+          <div class="countries">
+            <h2>Country: <%= oneCountry.name %></h2>
+            <p>Notes: <%= oneCountry.notes %></p>
+            <p>Travel Season: <%= oneCountry.season %></p>
+
+            <a href="/country/<%=oneCountry._id%>" class="details-link">Country details</a>
+        </div>
+        <% })%>
+      </div>
+    </section>
   </body>
 </html>
