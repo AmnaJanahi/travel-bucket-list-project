@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- you can either reuse the country-details stylesheet or make sure trip-details.css has the same class rules -->
+  <link rel="stylesheet" type="text/css" href="/css/country-details.css" />
+  <title>Trip Details</title>
 </head>
 <body>
-    <h1>Trip Details:</h1>
+  <%- include('../partials/navbar') %>
+  <div class="container">
+    <h1>Trip Details</h1>
+    <p class="subtitle">Review the saved trip info and choose whether to update or remove it.</p>
 
-    <h2>Trip: <%= foundTrip.tripName %></h2>
-    <p>Countries: 
-        <ul>
-            <% foundTrip.country.forEach((oneCountry)=>{ %>
-                    <li><%= oneCountry.name %></li>
+    <div class="card">
+      <div class="field">
+        <span class="label">Trip:</span>
+        <div class="value"><%= foundTrip.tripName %></div>
+      </div>
+
+      <div class="field">
+        <span class="label">Countries:</span>
+        <div class="value">
+          <ul>
+            <% foundTrip.country.forEach((oneCountry) => { %>
+              <li><%= oneCountry.name %></li>
             <% }) %>
-        </ul>
-    </p>
-   <p>Transportation: <%= foundTrip.transportation %></p>
-   <p>Accommodation: <%= foundTrip.accommodation %></p>
+          </ul>
+        </div>
+      </div>
 
-   <form action="/trip/update/<%= foundTrip._id%>?_method=Update">
-        <button type="submit">Update Trip</button>
-    </form>
+      <div class="field">
+        <span class="label">Transportation:</span>
+        <div class="value"><%= foundTrip.transportation %></div>
+      </div>
 
-    <br>
+      <div class="field">
+        <span class="label">Accommodation:</span>
+        <div class="value"><%= foundTrip.accommodation %></div>
+      </div>
 
-    <form action="/trip/delete/<%=foundTrip._id%>?_method=Delete" method="POST">
-         <button type="submit">Delete Trip</button>
-    </form>
+      <div class="actions">
+        <form action="/trip/update/<%= foundTrip._id %>?_method=Update">
+          <button type="submit" class="btn btn-edit">Update Trip</button>
+        </form>
 
+        <br />
 
+        <form action="/trip/delete/<%= foundTrip._id %>?_method=Delete" method="POST">
+          <button type="submit" class="btn btn-delete">Delete Trip</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

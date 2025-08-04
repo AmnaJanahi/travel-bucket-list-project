@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/country.css" />
+  <title>Update Country</title>
 </head>
-<body>
+<body class="add-country-page">
+
+  <%- include('../partials/navbar') %>
+
+  <div class="container">
     <h1>Country Update</h1>
+    <p class="subtitle">Edit the country details below and save your changes.</p>
+
     <% const selected = foundCountry.season%>
     <form action="/country/<%= foundCountry._id%>/update?_method=PUT" method="post">
 
-        <label for="name">Country:</label>
-        <input value="<%=foundCountry.name%>" type="text" name="name" id="name">
+    <div class="card">
+      <div class="field">
+        <span class="label">Country</span>
+        <div class="value">
+          <input value="<%= foundCountry.name %>" type="text" name="name" id="name" form="updateForm" />
+        </div>
+      </div>
 
-        <label for="notes">Add your notes:</label>
-        <textarea value="<%=foundCountry.notes%>" name="notes" id="notes"><%=foundCountry.notes%></textarea>
+      <div class="field">
+        <span class="label">Notes</span>
+        <div class="value">
+          <textarea value="<%=foundCountry.notes%>" name="notes" id="notes"><%=foundCountry.notes%></textarea>
+        </div>
+      </div>
 
-        <label for="season">Travel Season</label>
+      <div class="field">
+        <span class="label">Travel Season</span>
+        <div class="value">
+          <label for="season">Travel Season</label>
         <select name="season" required value >
             <option value="select">--Select a season--</option>
             <option value="spring"<%= selected === "Spring" && "selected" %>>Spring</option>
@@ -25,9 +44,39 @@
             <option value="Winter"<%= selected === "Winter" && "selected" %>>Winter</option>
         </select>
         <br>
+        </div>
+      </div>
 
-        <button type="submit">Update Country</button>
+      <div class="actions">
+       
+         <button type="submit"  class="btn btn-edit">Update Country</button>
 
-    </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

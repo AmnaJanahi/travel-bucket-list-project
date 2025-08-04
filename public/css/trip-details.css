@@ -2,99 +2,85 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  background: url("/public/images/pexels-camerashy-2114206.jpg") center/cover fixed no-repeat;
+  background: url("/images/pexels-adventure-travel-header-1024x477.jpg")center/cover fixed no-repeat; 
   position: relative;
-  color: #e3e8ff;
-  padding-top: 140px;
+  color: #c9cbcd;
+  padding-top: 160px;
   text-align: center;
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.15);
-  pointer-events: none;
-  z-index: 0;
-}
 
-
-.card,
-form {
-  position: relative;
-  max-width: 540px;
-  margin: 2rem auto;
+.card {
+    text-align: left;
   background: rgba(50, 48, 48, 0.65); 
-  padding: 2rem 2.25rem;
   border-radius: 18px;
-  box-shadow: 0 40px 80px -10px rgba(31,45,58,0.25);
+  padding: 2rem 2.25rem;
+  max-width: 840px;
+  width: 100%;
+  margin: 2rem auto;
+  box-shadow: 0 40px 80px -10px rgba(31,45,58,0.15);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  z-index: 1;
-  color: #f0f2fa;
-  text-align: left;
+  position: relative;
+  color: #e3e8ff;
 }
+
 
 .card h1,
-.card h2,
-h1 {
+.card h2 {
+
   margin: 0;
   font-weight: 700;
-  letter-spacing: .5px;
   color: #f0f2fa;
+ 
 }
-.subtitle,
-.page-subtitle {
-  margin: .25rem 0 1rem;
+.subtitle {
+  margin: 0;
   font-size: 1rem;
-  color: rgba(240,242,250,0.85);
+  color: rgba(255,255,255,0.85);
 }
 
-
+/* Field display */
 .field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 .label {
-  font-size: .85rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #c9cbcd;
-  margin: 0;
+  color: #a1a5aa;
 }
-
 .value {
   background: rgba(255,255,255,0.08);
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 10px;
   font-size: 1rem;
   word-break: break-word;
   color: #f0f2fa;
 }
 
-
-input[type="text"],
-textarea,
-select {
+.card input,
+.card textarea,
+.card select {
   width: 100%;
   padding: 14px 16px;
   border: 1px solid rgba(217,226,236,0.3);
   border-radius: 999px;
   font-size: 1rem;
-   background: rgba(255,255,255,0.08);
+  background: #f7f9fc;
   outline: none;
   transition: box-shadow .2s, border-color .2s;
-  color: #c9cbcd;
+  color: #1f2d3a;
   box-sizing: border-box;
 }
-input:focus,
-textarea:focus,
-select:focus {
+.card input:focus,
+.card textarea:focus,
+.card select:focus {
   border-color: #cccaeb;
-  box-shadow: 0 0 0 4px rgba(218,218,227,0.25);
+  box-shadow: 0 0 0 4px rgba(218,218,227,0.2);
 }
-
 
 .actions {
   display: flex;
@@ -102,10 +88,7 @@ select:focus {
   flex-wrap: wrap;
   margin-top: 1rem;
 }
-
-
-.btn,
-button {
+.btn {
   cursor: pointer;
   padding: 12px 24px;
   border-radius: 999px;
@@ -117,22 +100,27 @@ button {
   flex: 1;
   text-align: center;
 }
-
-
-.btn-primary,
 .btn-edit {
-  background: #440d05;
-  color: #fff;
+  background:#d9d7ef; 
+  color: #161515;
   box-shadow: 0 12px 40px -5px rgba(68,13,5,0.4);
 }
-.btn-primary:hover,
 .btn-edit:hover {
   filter: brightness(1.08);
   transform: translateY(-1px);
 }
-.btn-primary:active,
 .btn-edit:active {
   transform: translateY(2px);
 }
-
-
+.btn-delete {
+  background: #87666bda; 
+  color: #161515;
+  box-shadow: 0 12px 40px -5px rgba(87, 47, 51, 0.4);
+}
+.btn-delete:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+.btn-delete:active {
+  transform: translateY(2px);
+}
