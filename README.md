@@ -12,10 +12,7 @@ Use the app: https://travelbucketlist-l5tp.onrender.com/
 • [Introduction](#introduction)   
 • [Project Features](#project-features)  
 • [Technologies Used](#technologies-used) 
-
 • [Core Logic](#core-logic)  
-• [Wins & Blockers](#wins-&-blockers) 
-
 • [Future Enhancements](#future-enhancements)  
 • [Conclusion](#Conclusion) 
 
@@ -41,8 +38,6 @@ Each country entry is scoped to the user and includes metadata: country name, se
 
 • Dream Trip Builder  
 Dream trips link to a country entry and capture transportation and accommodation preferences. The data model allows users to evolve a simple wish list into structured trip plans.
-
-## Wins & Blockers:
 
 
 ## Future Enhancements:
