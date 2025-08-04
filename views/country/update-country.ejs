@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="/css/country.css" />
+  <link rel="stylesheet" type="text/css" href="/css/country-details.css" />
   <title>Update Country</title>
 </head>
 <body class="add-country-page">
@@ -35,7 +35,6 @@
       <div class="field">
         <span class="label">Travel Season</span>
         <div class="value">
-          <label for="season">Travel Season</label>
         <select name="season" required value >
             <option value="select">--Select a season--</option>
             <option value="spring"<%= selected === "Spring" && "selected" %>>Spring</option>
@@ -53,6 +52,7 @@
 
       </div>
     </div>
+    </form>
   </div>
 </body>
 </html>

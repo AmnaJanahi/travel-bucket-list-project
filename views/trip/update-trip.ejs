@@ -3,50 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/trip-details.css" />
     <title>Document</title>
 </head>
-<body>
-    <h1>Trip Update</h1>
-    <% const selectedTransportation = foundTrip.transportation%>
-    <% const selectedAccommodation = foundTrip.accommodation%>
-    <form action="/trip/<%= foundTrip._id%>/update?_method=PUT" method="post">
+<body class="add-country-page">
 
-        <label for="tripName">Trip Name:</label>
-        <input value="<%=foundTrip.tripName%>" type="text" name="tripName" id="tripName">
+      <%- include('../partials/navbar') %>
+     <div class="container">
+        <h1>Trip Update</h1>
+        <p class="subtitle">Edit the trip details below and save your changes.</p>
 
-        <label for="country">Countries:</label>
-        <select multiple name="country" id="country" required>
-            <% allCountries.forEach((oneCountry) => { %>
-            <option value="<%= oneCountry._id %>" 
-                <% if (foundTrip.country[0].name === oneCountry.name) { %> selected <% } %>>
-                <%= oneCountry.name %>
-            </option>
-        <% }) %>
-        </select>
+        <% const selectedTransportation = foundTrip.transportation%>
+        <% const selectedAccommodation = foundTrip.accommodation%>
+        <form action="/trip/<%= foundTrip._id%>/update?_method=PUT" method="post">
 
-        <label for="transportation">Transportation:</label>
-        <select name="transportation" required>
-            <option value="select">--Select a transport option--</option>
-            <option value="Car" <%= selectedTransportation === "Car" && "selected" %>>Car</option>
-            <option value="plane" <%= selectedTransportation === "plane" && "selected" %>>Plane</option>
-            <option value="Train" <%= selectedTransportation === "Train" && "selected" %>>Train</option>
-            <option value="Bus" <%= selectedTransportation === "Bus" && "selected" %>>Bus</option>
-            <option value="Other" <%= selectedTransportation === "Other" && "selected" %>>Other</option>
-        </select>
-        <br>
-        
-        <label for="accommodation">Accommodation:</label>
-        <select name="accommodation" required>
-            <option value="select">--Select accommodation--</option>
-            <option value="Hotel" <%= selectedAccommodation === "Hotel" && "selected" %>>Hotel</option>
-            <option value="Hostel" <%= selectedAccommodation === "Hostel" && "selected" %>>Hostel</option>
-            <option value="Camping" <%= selectedAccommodation === "Camping" && "selected" %>>Camping</option>
-            <option value="Other" <%= selectedAccommodation === "Other" && "selected" %>>Other</option>
-        </select>
-            
+            <div class="card">
+                <div class="field">
+                    <span class="label">Trip Name:</span>
+                    <div class="value">
+                    <input value="<%=foundTrip.tripName%>" type="text" name="tripName" id="tripName">
+                    </div>
+                </div>
 
-        <button type="submit">Update Trip</button>
+                <div class="field">
+                    <span class="label">Countries:</span>
+                    <div class="value">
+                        <select multiple name="country" id="country" required>
+                            <% allCountries.forEach((oneCountry) => { %>
+                                <% for( let i = 0; i < foundTrip.country.length; i++ ) { %>
+                                    <% if (foundTrip.country[i].name === oneCountry.name) { %>
+                                        <option selected value="<%= oneCountry._id %>">
+                                            <%= oneCountry.name %>                                            
+                                        </option>
+                                    <% } %>
+                                <% } %>>                                
+                        <% }) %>
+                        </select>
+                    </div>
+                </div>
 
-    </form>
+                <div class="field">
+                    <span class="label">Transportation:</span>
+                    <div class="value">
+                        <select name="transportation" required>
+                            <option value="select">--Select a transport option--</option>
+                            <option value="Car" <%= selectedTransportation === "Car" && "selected" %>>Car</option>
+                            <option value="plane" <%= selectedTransportation === "plane" && "selected" %>>Plane</option>
+                            <option value="Train" <%= selectedTransportation === "Train" && "selected" %>>Train</option>
+                            <option value="Bus" <%= selectedTransportation === "Bus" && "selected" %>>Bus</option>
+                            <option value="Other" <%= selectedTransportation === "Other" && "selected" %>>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <span class="label">Accommodation:</span>
+                    <div class="value">
+                        <select name="accommodation" required>
+                            <option value="select">--Select accommodation--</option>
+                            <option value="Hotel" <%= selectedAccommodation === "Hotel" && "selected" %>>Hotel</option>
+                            <option value="Hostel" <%= selectedAccommodation === "Hostel" && "selected" %>>Hostel</option>
+                            <option value="Camping" <%= selectedAccommodation === "Camping" && "selected" %>>Camping</option>
+                            <option value="Other" <%= selectedAccommodation === "Other" && "selected" %>>Other</option>
+                        </select>
+                    </div>
+                </div>   
+
+            <button type="submit" class="btn btn-edit">Update Trip</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
