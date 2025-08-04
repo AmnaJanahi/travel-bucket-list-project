@@ -12,6 +12,7 @@ Use the app: https://travelbucketlist-l5tp.onrender.com/
 • [Introduction](#introduction)   
 • [Project Features](#project-features)  
 • [Technologies Used](#technologies-used) 
+
 • [Core Logic](#core-logic)  
 • [Future Enhancements](#future-enhancements)  
 • [Conclusion](#Conclusion) 
