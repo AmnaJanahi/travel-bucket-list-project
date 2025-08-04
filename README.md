@@ -30,6 +30,8 @@ Use the app: https://travelbucketlist-l5tp.onrender.com/
 • CSS3
 • JavaScript ES6
 
+![Uploading image.png…]()
+
 ## Core Logic:
 • Authentication & Authorization  
 Users authenticate via secure login . Tokens/secrets are kept out of source code and stored in environment variables; endpoints are protected with middleware to ensure only the owning user can access their entries.  
