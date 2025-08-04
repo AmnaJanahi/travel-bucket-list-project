@@ -4,12 +4,12 @@
 Travel Bucket List is a browser-based personal travel planning built where authenticated users can sign in to track countries, annotate them with season and notes, and build their dream trips by selecting a country and specifying transportation and accommodation preferences.
 
 
-## Use the app: https://travelbucketlist-l5tp.onrender.com/
+Use the app: https://travelbucketlist-l5tp.onrender.com/
 
 
 ## Contents
 
-• Introduction  
+[Introduction](#introduction)   
 • Project Features  
 • How to Use  
 • Technologies Used  
@@ -17,3 +17,6 @@ Travel Bucket List is a browser-based personal travel planning built where authe
 • Wins & Blockers  
 • Future Enhancements  
 • Conclusion 
+
+
+
