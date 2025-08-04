@@ -26,8 +26,11 @@ Use the app: https://travelbucketlist-l5tp.onrender.com/
 
 ## Technologies:
 • MongoDB 
+
 • NodeJs
+
 • CSS3
+
 • JavaScript ES6
 
 ![Uploading image.png…]()
